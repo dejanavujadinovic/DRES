@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - My Flask Application</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Times New Roman';
+        }
+        div.navbar-collapse {
+            background-color: #D4AF37;
+            font-family: 'Times New Roman';
+            font-size: medium;
+            font-weight: bold;
+        }
+        div.navbar {
+            background-image: url("/static/image2.jpg");
+        }
+        p {
+            background-color: white;
+        }
+        p.class1 {
+            color: #D4AF37;
+            position: center;
+            text-align: center;
+            font-size: xx-large
+        }
+        .button-33:hover {
+            color:black;
+            background-color:black;
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
+        .button-73:hover {
+            background-color: white;
+            box-shadow: black 0 -6px 8px inset;
+            transform: scale(1.125);
+        }
+
+        .button-73:active {
+            transform: scale(1.025);
+        }
+
+        @media (min-width: 768px) {
+            .button-73 {
+                /*font-size: 1.5rem;*/
+                padding: .75rem 2rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <p><h2 style="color:crimson">{{notification}}</h2></p>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <center><img src="/static/logo7.png" style="height:auto; width:15%;" /></center>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('login') }}">| LOGIN</a></li>                   
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('register') }}">| REGISTER</a></li>                    
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('editprofile') }}">| EDIT PROFILE</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('cardbalance') }}">| CARD BALANCE</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('depositonline') }}">| DEPOSIT ONLINE</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('banktransaction') }}">| BANK TRANSACTION</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('onlinetransaction') }}">| ONLINE TRANSACTION</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('exchange') }}">| EXCHANGE</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('verification') }}">| VERIFICATION</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('viewbankhistory') }}">| VIEW BANK HISTORY</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('viewonlinehistory') }}">| VIEW ONLINE HISTORY</a></li>
+                        <li><a class="button-73" style="color:white;" href="{{ url_for('logout') }}">| LOGOUT</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+        <footer>
+            <p>&copy; {{ year }} - My Flask Application</p>
+        </footer>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <p class="class1">
+        WELCOME!<br />
+    </p>
+
+    <p class="class1">
+        CONTACT US FOR ANY QUESTIONS!
+    </p>
+
+    <p class="class1">
+        WE ARE HERE BECAUSE OF YOU!
+    </p>
+
+    <p class="class1">
+        OVER 1,000,000 SATISFIED USERS!
+    </p>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

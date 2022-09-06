@@ -1,0 +1,88 @@
+﻿<head>
+    <style>
+        table {
+            background-color: #D4AF37;
+            border-color: #D4AF37;
+            color: white;
+            font-weight: bold;
+            font-family: 'Times New Roman';
+            font-size: large;
+            border-collapse: collapse;
+        }
+
+        body {
+            background-image: url('/static/image2.jpg');
+        }
+
+        h4 {
+            font-size: x-large;
+            color: white;
+            font-weight: bold;
+            font-family: 'Times New Roman';
+            text-align: center;
+            background-color: #D4AF37;
+        }
+
+        input {
+            font-family: 'Times New Roman';
+            font-size: large;
+            font-weight: bold;
+            color: black;
+        }
+
+        .button-33 {
+            background-color: black;
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+            color: white;
+            cursor: pointer;
+            display: inline-block;
+            font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            /*position: relative;
+            left: 230px;*/
+            position: relative;
+            left: 800px;
+        }
+
+        .button-33:hover {
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color:white">
+        <center><img src="/static/logo7.png" style="height:auto; width:15%; background-color:white" /></center>
+    </div>
+    <br />
+    <h4>BANK TRANSACTION: </h4>
+    <br />
+    <form action="" method="post" style="background-color:#D4AF37">
+        <table border="0" bgcolor="lightgray" align="center">
+            <tr>
+                <td>Enter mail or card number: </td>
+                <td><input type="text" name="reciever" value="{{request.form.reciever}}" /></td>
+            </tr>
+            <tr>
+                <td>Amount: </td>
+                <td><input type="text" name="amount" value="{{request.form.amount}}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="PROCEED" class="button-33" /></td>
+            </tr>
+        </table>
+    </form>
+    <center><p style="color:#D4AF37; background-color:white; font-size:x-large;">{{notification}}</p></center>
+    <a class="button-33" style="position:relative; left:2px" href="{{ url_for('layout') }}">  << BACK  </a>
+
+</body>
